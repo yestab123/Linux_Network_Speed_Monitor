@@ -46,7 +46,8 @@ uint64_t *my_ipconfig(char *ath0)
         {
 
             printf("don't find dev %s\n", ath0);
-            return NULL;
+            printf("Usage:./net_flow [NIC_name] (default use eth0, check by cmd ifconfig)\n");
+            exit(0);
         }
     char *p;
     char *ifconfig_value;
@@ -95,6 +96,47 @@ get_now_sec(void) {
     return sec;
 }
 
+#define SMOOTH_NUM 20
+double
+input_smooth(double speed) {
+    static int i = 0;
+    int j;
+    static double t[SMOOTH_NUM];
+    double rate;
+
+    t[i] = speed;
+    i++;
+    if (i >= SMOOTH_NUM) {
+        i = 0;
+    }
+
+    for (j = 0; j < SMOOTH_NUM; j++) {
+        rate += t[j];
+    }
+
+    return (rate/SMOOTH_NUM);
+}
+
+double
+output_smooth(double speed) {
+    static int i = 0;
+    int j;
+    static double t[SMOOTH_NUM];
+    double rate;
+
+    t[i] = speed;
+    i++;
+    if (i >= SMOOTH_NUM) {
+        i = 0;
+    }
+
+    for (j = 0; j < SMOOTH_NUM; j++) {
+        rate += t[j];
+    }
+
+    return (rate/SMOOTH_NUM);
+}
+
 int
 main(int argc, char **argv)
 {
@@ -104,6 +146,7 @@ main(int argc, char **argv)
     char *dev_name;
     uint32_t last = 0;
     uint32_t pl;
+    double speed;
     double in_past = 0;
     double out_past = 0;
     double in_now;
@@ -124,15 +167,17 @@ main(int argc, char **argv)
             /*保存在文件中的数值的单位是B，经过计算换算成MB*/
             in_now = (double)ifconfig_result[0]/1024;
             re_mb = (double)ifconfig_result[0]/(1024*1024);
-            printf("Input: %0.2fMB %0.2fKB/s | ",
-                   re_mb, (in_now - in_past)/pl);
+            speed = (in_now - in_past)/pl;
+            printf("Input: %0.2fMB  %0.2fKB/s Smooth_Speed:%0.2fKB/s | ",
+                   re_mb, speed, input_smooth(speed));
             in_past = in_now;
             
             /*保存在文件中的数值的单位是B，经过计算换算成MB*/
             out_now = (double)ifconfig_result[1]/1024;
             re_mb = (double)ifconfig_result[1]/(1024*1024);
-            printf("Output: %0.2fMB %0.2fKB/s                    \r",
-                   re_mb, (out_now - out_past)/pl);
+            speed = (out_now - out_past)/pl;
+            printf("Output: %0.2fMB  %0.2fKB/s Smooth_Speed:%0.2fKB/s                   \r",
+                   re_mb, speed, output_smooth(speed));
             out_past = out_now;
             fflush(stdout);
             last = get_now_sec();
