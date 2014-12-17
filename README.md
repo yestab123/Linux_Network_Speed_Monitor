@@ -3,6 +3,8 @@ NIC_Speed_Show
 
 NIC Network traffic and speed monitor, it can show NIC now send and receive speed.
 
+网卡流量与速率实时监控，可以显示指定网卡的流量和发送与接收速度（KB/s）.
+
 Modified on http://blog.csdn.net/dlutbrucezhang/article/details/9132303
 
 本程序修改于http://blog.csdn.net/dlutbrucezhang/article/details/9132303
