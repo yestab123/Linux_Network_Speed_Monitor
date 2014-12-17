@@ -30,4 +30,4 @@ Usage
 =============
 1.make
 
-2.Run ./net_flow [NIC name] (default is eth0, you can get on command ifconfig)
+2.Run ./net_flow NIC_name (default is eth0, you can get on command ifconfig)
