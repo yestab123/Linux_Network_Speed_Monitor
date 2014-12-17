@@ -2,7 +2,9 @@ NIC_Speed_Show
 ==============
 
 NIC Network traffic and speed monitor, it can show NIC now send and receive speed.
+
 Modified on http://blog.csdn.net/dlutbrucezhang/article/details/9132303
+
 本程序修改于http://blog.csdn.net/dlutbrucezhang/article/details/9132303
 
 Linux / Gcc / C
