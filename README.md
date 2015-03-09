@@ -37,4 +37,4 @@ Usage
 2.Run ./net_flow NIC_name (default is eth0, you can get on command ifconfig)
 
 Attention:
-If seth0: (if has blank after ':' , please use net_flow_2(seth0: 12312), else please use net_flow(seth0:1231).
+If seth0: (if has blank after ':' , please use net_flow_s(seth0: 12312), else please use net_flow(seth0:1231).
