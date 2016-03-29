@@ -1,7 +1,7 @@
-NIC_Speed_Show
+Linux_Network_Speed_Monitor
 ==============
 
-NIC Network traffic and speed monitor, it can show NIC now send and receive speed.
+NIC Network traffic and speed monitor, it can show NIC instantaneous speed for send and recv on KB/s.
 
 网卡流量与速率实时监控，可以显示指定网卡的流量和发送与接收速度（KB/s）.
 
@@ -11,7 +11,9 @@ Modified on http://blog.csdn.net/dlutbrucezhang/article/details/9132303
 
 Linux / Gcc / C
 --------------
-Only been tested on Centos 6.5/Centos 6.2
+Only been tested on Centos 6.5/Centos 6.2 (You can use in Linux System)
+
+Each System may has difference format on /proc/net/dev, it may be not work on some system.
 
 Dependent on /proc/net/dev , and it need has 16 numbers each line.
 
