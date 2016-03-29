@@ -43,4 +43,5 @@ If seth0: (if has blank after ':' , please use net_flow_s(seth0: 12312), else pl
 Demo
 ==============
 [root@colud ~]# ./net_flow_s seth0
+
 Iput: 3431.88MB  59.17KB/s Smooth_Speed:8.08KB/s | Output: 2812.71MB  61.82KB/s Smooth_Speed:8.26KB/s
