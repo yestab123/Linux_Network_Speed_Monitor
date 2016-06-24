@@ -104,7 +104,7 @@ input_smooth(double speed) {
     static int i = 0;
     int j;
     static double t[SMOOTH_NUM];
-    double rate;
+    double rate = 0;
 
     t[i] = speed;
     i++;
@@ -124,7 +124,7 @@ output_smooth(double speed) {
     static int i = 0;
     int j;
     static double t[SMOOTH_NUM];
-    double rate;
+    double rate = 0;
 
     t[i] = speed;
     i++;
