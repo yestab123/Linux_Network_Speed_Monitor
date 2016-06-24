@@ -2,9 +2,11 @@ Linux_Network_Speed_Monitor
 ==============
 
 NIC Network traffic and speed monitor, it can show NIC instantaneous speed for send and recv on KB/s.
+
 网卡流量与速率实时监控，可以显示指定网卡的流量和发送与接收速度（KB/s）.
 
 Data reading algorithms base on http://blog.csdn.net/dlutbrucezhang/article/details/9132303
+
 本程序数据读取算法基于http://blog.csdn.net/dlutbrucezhang/article/details/9132303
 
 Linux / Gcc / C
