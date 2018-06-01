@@ -11,7 +11,7 @@ Data reading algorithms base on http://blog.csdn.net/dlutbrucezhang/article/deta
 
 Linux / Gcc / C
 --------------
-Only been tested on Centos 6.5/Centos 6.2/Ubuntu (You can use in Linux System)
+Only been tested on Centos 6.5/Centos 6.2/Ubuntu
 
 Usage
 =============
